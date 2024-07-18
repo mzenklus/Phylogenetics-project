@@ -1,0 +1,39 @@
+setwd("/Users/matiaszenklusen/Downloads/Phylogenetics analysis")
+
+# read the data
+taxa <- readTaxonData("Data/Saber-toothed_cat_taxa.tsv")
+morpho <- readDiscreteCharacterData("Data/Saber-toothed_cat_data.txt")
+
+# helper variables
+num_taxa <- morpho.ntaxa() # number of taxa
+num_branches <- 2 * num_taxa - 2 # number of branches in an *rooted* tree
+
+moves    = VectorMoves()
+monitors = VectorMonitors()
+
+# tree model
+source(""exercise-RB03-scripts/scripts/FBD_dating.Rev")
+# clock model
+source(""exercise-RB03-scripts/scripts/strict_clock_morpho.Rev")
+# substitution models
+source(""exercise-RB03-scripts/scripts/Mk.Rev")
+
+# set up the MCMC
+mymodel = model(tree)
+
+#I'm stuck on where I find output files for my saber-toothed cat data. I managed to process the scripts without issue, but I haven't seen an output folder or document appear. 
+
+# monitors
+
+# parameters printed to file
+monitors.append( mnModel(filename = "output/bears_FBD_pr.log", printgen = 10, exclude = ["F"]) )
+# trees printed to file
+monitors.append( mnFile(filename = "output/bears_FBD_pr.trees", printgen = 10, tree) )
+# parameter values printed to screen during the MCMC
+monitors.append( mnScreen(printgen = 10, age_extant, num_samp_anc, origin_time) )
+
+mymcmc = mcmc(mymodel, monitors, moves)
+mymcmc.run(generations = 10000, tuningInterval = 1000)#underPrior=TRUE
+
+trace = readTreeTrace("output/bears_FBD_all.trees")
+mccTree(trace, file="output/bears_FBD_all.mcc.tre")
