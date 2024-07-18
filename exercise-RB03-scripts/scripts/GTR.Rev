@@ -1,0 +1,18 @@
+# GTR model
+
+# priors on the GTR model parameters: exchangeability rates and state frequencies
+alpha1 <- v(1,1,1,1,1,1) # 6 for rates
+alpha2 <- v(1,1,1,1) # 4 for state frequencies
+
+er ~ dnDirichlet(alpha1)
+freq ~ dnDirichlet(alpha2)
+
+moves.append( mvSimplexElementScale(er, alpha=10.0, weight=5.0) )
+moves.append( mvSimplexElementScale(freq, alpha=10.0, weight=5.0) )
+
+# the rate maxtrix
+Q_GTR := fnGTR(er, freq)
+
+# attach the model to your sequence data
+seq ~ dnPhyloCTMC(tree = tree, Q = Q_GTR, type = "DNA", branchRates = branch_rates)
+seq.clamp(cytb)
