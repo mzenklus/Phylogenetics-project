@@ -12,11 +12,11 @@ moves    = VectorMoves()
 monitors = VectorMonitors()
 
 # tree model
-source(""exercise-RB03-scripts/scripts/FBD_dating.Rev")
+source("exercise-RB03-scripts/scripts/FBD_dating.Rev")
 # clock model
-source(""exercise-RB03-scripts/scripts/strict_clock_morpho.Rev")
+source("exercise-RB03-scripts/scripts/strict_clock_morpho.Rev")
 # substitution models
-source(""exercise-RB03-scripts/scripts/Mk.Rev")
+source("exercise-RB03-scripts/scripts/Mk.Rev")
 
 # set up the MCMC
 mymodel = model(tree)
