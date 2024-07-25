@@ -1,8 +1,0 @@
-# Mk / JC model
-
-branch_rates ~ dnExponential(10.0)
-
-Q <- fnJC(4)
-
-seq_morpho ~ dnPhyloCTMC(tree = tree, Q = Q, type = "Standard", branchRates = branch_rates)
-seq_morpho.clamp(morpho)
