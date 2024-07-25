@@ -1,0 +1,94 @@
+Last login: Tue Jul  9 15:51:36 on ttys001
+/Users/matiaszenklusen/Downloads/revbayes-v1.2.3/bin/rb ; exit;                 
+matiaszenklusen@faustud-010-021-061-164 ~ % /Users/matiaszenklusen/Downloads/revbayes-v1.2.3/bin/rb ; exit;
+
+RevBayes version (1.2.3)
+Build from tags/v1.2.3 (002dc6) on Fri Apr 26 14:13:07 UTC 2024
+
+Visit the website www.RevBayes.com for more information about RevBayes.
+
+RevBayes is free software released under the GPL license, version 3. Type 'license()' for details.
+
+To quit RevBayes type 'quit()' or 'q()'.
+
+
+> setwd("/Users/matiaszenklusen/Downloads/Phylogenetics analysis")
+> getwd()
+   /Users/matiaszenklusen/Downloads/Phylogenetics analysis
+> source("mcmc.rev")
+   Processing file "mcmc.rev"
+   Successfully read one character matrix from file 'Data/Saber-toothed_cat_data.txt'
+   Error:	Could not open file "/MkVP+G_Model.Rev"
+   Error:	Problem processing line 42 in file "mcmc.rev"
+> clear()      
+> source("mcmc.rev")
+   Processing file "mcmc.rev"
+   Successfully read one character matrix from file 'Data/Saber-toothed_cat_data.txt'
+   Error:	End of line while in quote
+   
+   Error:	Problem processing line 11 in file "mcmc.rev"
+> model_name
+   MkVP+G
+> clear() 
+> source("mcmc.rev")
+   Processing file "mcmc.rev"
+   Successfully read one character matrix from file 'Data/Saber-toothed_cat_data.txt'
+   Processing file "MkVP+G_Model.rev"
+   Processing of file "MkVP+G_Model.rev" completed
+   Missing Variable:	Variable model_name does not exist
+   Error:	Problem processing line 54 in file "mcmc.rev"
+> clear()
+> source("mcmc.rev")
+   Processing file "mcmc.rev"
+   Successfully read one character matrix from file 'Data/Saber-toothed_cat_data.txt'
+   Processing file "MkVP+G_Model.rev"
+   Processing of file "MkVP+G_Model.rev" completed
+   
+   Running burn-in phase of Monte Carlo sampler for 200 iterations.
+   This simulation runs 2 independent replicates.
+   The simulator uses 5 different moves in a random move schedule with 69.6 moves per iteration
+   
+
+Progress:
+0---------------25---------------50---------------75--------------100
+********************************************************************
+
+   
+   Running MCMC simulation
+   This simulation runs 2 independent replicates.
+   The simulator uses 5 different moves in a random move schedule with 69.6 moves per iteration
+   
+
+Iter        |      Posterior   |     Likelihood   |          Prior   |    tree_length   |    elapsed   |        ETA   |
+-----------------------------------------------------------------------------------------------------------------------
+0           |       -457.214   |       -453.829   |       -3.38504   |       2.977248   |   00:00:00   |   --:--:--   |
+1000        |       -469.941   |       -464.314   |       -5.62712   |       3.113003   |   00:00:06   |   --:--:--   |
+2000        |       -453.416   |       -456.376   |        2.96071   |       2.516881   |   00:00:12   |   00:00:48   |
+3000        |       -447.538   |       -449.197   |        1.65903   |       2.593973   |   00:00:18   |   00:00:42   |
+4000        |       -453.862   |       -451.576   |       -2.28601   |       2.887439   |   00:00:24   |   00:00:36   |
+5000        |        -454.64   |       -452.049   |       -2.59124   |        2.91006   |   00:00:30   |   00:00:30   |
+6000        |       -456.839   |       -454.421   |       -2.41735   |       2.874426   |   00:00:36   |   00:00:24   |
+7000        |       -450.049   |       -453.194   |        3.14425   |       2.478403   |   00:00:42   |   00:00:18   |
+8000        |       -458.168   |       -450.269   |        -7.8987   |        3.20399   |   00:00:48   |   00:00:12   |
+9000        |       -454.048   |       -456.296   |        2.24809   |       2.427346   |   00:00:55   |   00:00:06   |
+10000       |       -470.577   |       -459.498   |       -11.0787   |       3.553792   |   00:01:01   |   00:00:00   |
+   Processing file "output_MkVP+G/morpho_posterior.trees"
+
+Progress:
+0---------------25---------------50---------------75--------------100
+********************************************************************
+
+   Compiling maximum clade credibility tree from 1502 trees.
+   
+   Summarizing clades ...
+   
+
+Progress:
+0---------------25---------------50---------------75--------------100
+********************************************************************
+
+   Annotating tree ...
+  
+   (((((((((((((Canis_lupus[&index=3,age_95%_HPD={0,0}]:0.449566,Cryptoprocta_feroxq[&index=4,age_95%_HPD={0.183002,0.732058}]:0.035047)[&index=23,posterior=0.877497,age_95%_HPD={0.232965,0.696208}]:0.142492,Dinictis_felina[&index=5,age_95%_HPD={0,0.62498}]:0.267883)[&index=24,posterior=0.948069,age_95%_HPD={0.296018,0.864676}]:0.187910,Pseudaelurus_spp.[&index=6,age_95%_HPD={0.397596,1.08947}]:0.050928)[&index=25,posterior=0.849534,age_95%_HPD={0.46565,1.09385}]:0.086772,Promegantereon_ogygia[&index=8,age_95%_HPD={0.494499,1.1875}]:0.022056)[&index=26,posterior=0.278296,age_95%_HPD={0.546151,1.20013}]:0.009639,Machairodus_aphanistus[&index=7,age_95%_HPD={0.454199,1.15289}]:0.074465)[&index=27,posterior=0.649800,age_95%_HPD={0.564274,1.23508}]:0.035421,Nimravides_ssp.[&index=9,age_95%_HPD={0.504574,1.21772}]:0.082954)[&index=28,posterior=0.955393,age_95%_HPD={0.56788,1.26229}]:0.073141,(Metailurus_major[&index=11,age_95%_HPD={0.534418,1.29342}]:0.012671,Metailurus_parvulus[&index=10,age_95%_HPD={0.490917,1.24132}]:0.050459)[&index=29,posterior=0.919441,age_95%_HPD={0.562453,1.30662}]:0.057003)[&index=30,posterior=0.799601,age_95%_HPD={0.629058,1.36522}]:0.066608,Dinofelis_barlowi[&index=13,age_95%_HPD={0.634852,1.41651}]:0.031003)[&index=31,posterior=0.372170,age_95%_HPD={0.674518,1.41039}]:0.014029,Dinofelis_petteri[&index=12,age_95%_HPD={0.631356,1.42327}]:0.070207)[&index=32,posterior=0.334887,age_95%_HPD={0.686878,1.40409}]:0.023581,Dinofelis_cristata[&index=14,age_95%_HPD={0.617631,1.42954}]:0.080181)[&index=33,posterior=1.000000,age_95%_HPD={0.702705,1.47511}]:0.245625,((Megantereon_nihowanensis[&index=2,age_95%_HPD={0.833944,1.7167}]:-0.019235,Megantereon_whitei[&index=16,age_95%_HPD={0.821074,1.69872}]:-0.018596)[&index=34,posterior=0.394807,age_95%_HPD={0.803093,1.67665}]:0.012789,Megantereon_cultridens[&index=15,age_95%_HPD={0.825168,1.70825}]:-0.018491)[&index=35,posterior=0.301598,age_95%_HPD={0.825289,1.67907}]:0.068059)[&index=36,posterior=0.997337,age_95%_HPD={0.895427,1.76698}]:0.143886,(Smilodon_fatalis[&index=17,age_95%_HPD={0.937483,1.89124}]:0.007849,Smilodon_populator[&index=18,age_95%_HPD={0.916569,1.87175}]:0.010809)[&index=37,posterior=0.904128,age_95%_HPD={0.962728,1.89609}]:0.079648)[&index=38,posterior=0.932091,age_95%_HPD={0.992643,1.91865}]:0.093751,(((Homotherium_crenatidens[&index=20,age_95%_HPD={0.928472,1.88607}]:0.017597,Homotherium_serum[&index=1,age_95%_HPD={0.932449,1.89295}]:0.018746)[&index=39,posterior=0.222370,age_95%_HPD={0.9701,1.9276}]:-0.008930,Homotherium_latidens[&index=19,age_95%_HPD={0.918105,1.88304}]:0.007378)[&index=40,posterior=0.209720,age_95%_HPD={0.939524,1.90182}]:0.025286,Xenosmilus_hodsonae[&index=21,age_95%_HPD={0.886995,1.86176}]:0.084125)[&index=41,posterior=0.999334,age_95%_HPD={0.977829,1.93158}]:0.134482,Amphimachairodus_giganteus[&index=22,age_95%_HPD={1.0559,2.02291}]:0.062774)[&index=42,posterior=1.000000,age_95%_HPD={1.10191,2.06834}]:0.000000;
+   Processing of file "mcmc.rev" completed
+> 
