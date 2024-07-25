@@ -1,0 +1,82 @@
+Last login: Tue Jul  9 18:19:21 on ttys002
+/Users/matiaszenklusen/Downloads/revbayes-v1.2.3/bin/rb ; exit;                 
+matiaszenklusen@Matiass-MacBook-Air ~ % /Users/matiaszenklusen/Downloads/revbayes-v1.2.3/bin/rb ; exit;
+
+RevBayes version (1.2.3)
+Build from tags/v1.2.3 (002dc6) on Fri Apr 26 14:13:07 UTC 2024
+
+Visit the website www.RevBayes.com for more information about RevBayes.
+
+RevBayes is free software released under the GPL license, version 3. Type 'license()' for details.
+
+To quit RevBayes type 'quit()' or 'q()'.
+
+
+> getwd()
+   /Users/matiaszenklusen
+> setwd("/Users/matiaszenklusen/Downloads/Phylogenetics analysis")
+> analysis_name = "pps_morpho_example"
+> model_name = "Mk"
+> model_file_name = "Mk_Model.Rev"
+> inFile="data/Saber-toothed_cat_data.txt"
+> morpho<-readDiscreteCharacterData(inFile)
+   Successfully read one character matrix from file 'data/Saber-toothed_cat_data.txt'
+> num_states="4"
+> moves=VectorMoves()
+> monitors=VectorMonitors()
+> source("MK_Model.Rev")
+   Processing file "MK_Model.Rev"
+   Processing of file "MK_Model.Rev" completed
+> source("pps_MCMC.Rev")
+   Processing file "pps_MCMC.Rev"
+   Processing file "Mk_Model.Rev"
+   Processing of file "Mk_Model.Rev" completed
+   
+   Running burn-in phase of Monte Carlo sampler for 200 iterations.
+   This simulation runs 2 independent replicates.
+   The simulator uses 4 different moves in a random move schedule with 67.6 moves per iteration
+   
+
+Progress:
+0---------------25---------------50---------------75--------------100
+********************************************************************
+
+   
+   Running MCMC simulation
+   This simulation runs 2 independent replicates.
+   The simulator uses 4 different moves in a random move schedule with 67.6 moves per iteration
+   
+
+Iter        |      Posterior   |     Likelihood   |          Prior   |    tree_length   |    elapsed   |        ETA   |
+-----------------------------------------------------------------------------------------------------------------------
+0           |       -550.161   |         -559.4   |        9.23934   |       2.892195   |   00:00:00   |   --:--:--   |
+1000        |        -551.14   |       -561.498   |         10.358   |       2.779162   |   00:00:01   |   --:--:--   |
+2000        |       -547.787   |       -560.956   |        13.1686   |        2.58729   |   00:00:03   |   00:00:12   |
+3000        |       -547.248   |       -560.154   |        12.9066   |       2.624525   |   00:00:05   |   00:00:11   |
+4000        |       -548.057   |       -559.215   |        11.1578   |        2.74511   |   00:00:07   |   00:00:10   |
+5000        |       -548.219   |       -558.831   |        10.6126   |       2.787232   |   00:00:09   |   00:00:09   |
+6000        |       -552.108   |       -564.425   |        12.3176   |       2.668175   |   00:00:11   |   00:00:07   |
+7000        |       -562.029   |       -568.186   |        6.15657   |        3.10203   |   00:00:13   |   00:00:05   |
+8000        |       -558.007   |       -561.073   |        3.06591   |       3.312927   |   00:00:15   |   00:00:03   |
+9000        |       -539.722   |       -553.593   |        13.8713   |       2.561697   |   00:00:17   |   00:00:01   |
+10000       |        -548.81   |       -557.705   |        8.89487   |       2.684006   |   00:00:19   |   00:00:00   |
+   Processing file "output_Mk/pps_morpho_example_posterior.trees"
+
+Progress:
+0---------------25---------------50---------------75--------------100
+********************************************************************
+
+   Compiling maximum clade credibility tree from 1502 trees.
+   
+   Summarizing clades ...
+   
+
+Progress:
+0---------------25---------------50---------------75--------------100
+********************************************************************
+
+   Annotating tree ...
+  
+   (((((((((((((Canis_lupus[&index=8,age_95%_HPD={0,0}]:0.452051,Cryptoprocta_feroxq[&index=7,age_95%_HPD={0.197851,0.661386}]:0.027258)[&index=23,posterior=0.848202,age_95%_HPD={0.243171,0.653105}]:0.109819,Dinictis_felina[&index=9,age_95%_HPD={0,0.558861}]:0.267861)[&index=24,posterior=0.998003,age_95%_HPD={0.329757,0.805114}]:0.202051,Pseudaelurus_spp.[&index=6,age_95%_HPD={0.443184,1.00798}]:0.046203)[&index=25,posterior=0.960053,age_95%_HPD={0.486687,1.03134}]:0.098647,(Machairodus_aphanistus[&index=10,age_95%_HPD={0.501588,1.09811}]:0.031463,Promegantereon_ogygia[&index=12,age_95%_HPD={0.534139,1.12794}]:-0.009750)[&index=26,posterior=0.302264,age_95%_HPD={0.523988,1.12626}]:0.036053)[&index=27,posterior=0.539281,age_95%_HPD={0.580578,1.14132}]:0.031507,Nimravides_ssp.[&index=11,age_95%_HPD={0.50828,1.10838}]:0.087916)[&index=28,posterior=0.996005,age_95%_HPD={0.584026,1.18024}]:0.084715,(Metailurus_major[&index=14,age_95%_HPD={0.605783,1.25169}]:0.016052,Metailurus_parvulus[&index=13,age_95%_HPD={0.547185,1.20166}]:0.058032)[&index=29,posterior=0.925433,age_95%_HPD={0.620052,1.26775}]:0.054313)[&index=30,posterior=0.808256,age_95%_HPD={0.678212,1.28563}]:0.037176,Dinofelis_petteri[&index=17,age_95%_HPD={0.633872,1.30846}]:0.036068)[&index=31,posterior=0.394807,age_95%_HPD={0.722949,1.37372}]:0.041031,Dinofelis_barlowi[&index=16,age_95%_HPD={0.653027,1.32053}]:0.049627)[&index=32,posterior=0.335553,age_95%_HPD={0.717496,1.35344}]:0.018519,Dinofelis_cristata[&index=15,age_95%_HPD={0.659342,1.35612}]:0.080638)[&index=33,posterior=1.000000,age_95%_HPD={0.732473,1.38819}]:0.246151,(Megantereon_nihowanensis[&index=4,age_95%_HPD={0.90166,1.67087}]:-0.013096,Megantereon_whitei[&index=3,age_95%_HPD={0.894655,1.67746}]:-0.011156)[&index=34,posterior=0.415446,age_95%_HPD={0.879283,1.62597}]:0.073308)[&index=35,posterior=0.346871,age_95%_HPD={0.976685,1.68684}]:0.002032,Megantereon_cultridens[&index=5,age_95%_HPD={0.884616,1.65662}]:0.048532)[&index=36,posterior=0.998668,age_95%_HPD={0.964202,1.71751}]:0.134757,(Smilodon_fatalis[&index=2,age_95%_HPD={0.95281,1.77389}]:0.013733,Smilodon_populator[&index=1,age_95%_HPD={0.979521,1.79264}]:0.014424)[&index=37,posterior=0.930093,age_95%_HPD={1.02737,1.82468}]:0.073556)[&index=38,posterior=0.974700,age_95%_HPD={1.06301,1.86822}]:0.091833,(((Homotherium_crenatidens[&index=20,age_95%_HPD={0.960443,1.80743}]:0.020716,Homotherium_serum[&index=21,age_95%_HPD={1.00374,1.8342}]:0.023634)[&index=39,posterior=0.218375,age_95%_HPD={1.02366,1.81829}]:0.013507,Homotherium_latidens[&index=22,age_95%_HPD={0.959059,1.80787}]:0.035830)[&index=40,posterior=0.214381,age_95%_HPD={1.03577,1.88297}]:-0.000231,Xenosmilus_hodsonae[&index=19,age_95%_HPD={0.896147,1.73284}]:0.085463)[&index=41,posterior=1.000000,age_95%_HPD={1.01967,1.85388}]:0.124662,Amphimachairodus_giganteus[&index=18,age_95%_HPD={1.04241,1.88636}]:0.070986)[&index=42,posterior=1.000000,age_95%_HPD={1.14994,1.97229}]:0.000000;
+   Processing of file "pps_MCMC.Rev" completed
+>        

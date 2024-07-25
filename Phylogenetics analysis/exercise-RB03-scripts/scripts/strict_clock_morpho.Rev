@@ -1,0 +1,2 @@
+branch_rates_morph ~ dnExponential(10.0)
+moves.append( mvScale(branch_rates_morph, lambda = 0.5, tune = true, weight = 3.0) )
