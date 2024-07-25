@@ -16,14 +16,14 @@ moves    = VectorMoves()
 monitors = VectorMonitors()
 
 
-source( model_file_name )
+source(Morphological substitution scripts/pps_MCMC.Rev)
 
 
 
-monitors.append( mnModel(filename="output_" + model_name + "/" + analysis_name + "_posterior.log",printgen=10, separator = TAB)) 
-monitors.append( mnFile(filename="output_" + model_name + "/" + analysis_name + "_posterior.trees",printgen=10, separator = TAB, phylogeny) )
+monitors.append( mnModel(filename="output_Mk.Rev/MCMC_posterior.log",printgen=10, separator = TAB)) 
+monitors.append( mnFile(filename="output_Mk.Rev/MCMC_posterior.trees",printgen=10, separator = TAB, phylogeny) )
 monitors.append( mnScreen(printgen=1000, tree_length) )
-monitors.append( mnStochasticVariable(filename="output_" + model_name + "/" + analysis_name + "_posterior.var",printgen=10) )
+monitors.append( mnStochasticVariable(filename="output_Mk.Rev/MCMC_posterior.var",printgen=10) )
 
 
 mymcmc = mcmc(mymodel, monitors, moves, nruns=2, combine="mixed")
@@ -32,5 +32,5 @@ mymcmc.run(generations=10000,tuningInterval=200)
 
 
 # get the MCC summary tree
-trace = readTreeTrace("output_" + model_name + "/" + analysis_name + "_posterior.trees")
-mccTree(trace, file="output_" + model_name + "/MCC.tre")
+trace = readTreeTrace("output_Mk.Rev/MCMC_posterior.trees")
+mccTree(trace, file="output_Mk.Rev/MCC.tre")
