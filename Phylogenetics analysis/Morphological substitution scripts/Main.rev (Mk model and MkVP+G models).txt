@@ -1,0 +1,21 @@
+
+setwd("Users/matiaszenklusen/Downloads/Phylogenetics analysis")
+
+#Mk model work 
+
+source("Morphological substitution scripts/pps_analysis_Mk.Rev")
+
+source("Mk_Model.Rev")
+
+source("pps_MCMC.Rev")
+
+#MkVP+G model work
+
+source("Morphological substitution scripts/pps_analysis_Mk.Rev") #you can modify the pps_analysis_Mk.Rev script, so that the model name is MkVP+G
+
+source("MkVP+G_Model.Rev")
+
+source("pps_MCMC.Rev")
+
+#Following this, I took the results of the runs done for each of the models (pps_morpho_example_posterior_run_1.log, pps_morpho_example_posterior_run_2.log for Mk, morpho_posterior_run_1.log,morpho_posterior_run_2.log for MkVP+G)
+
