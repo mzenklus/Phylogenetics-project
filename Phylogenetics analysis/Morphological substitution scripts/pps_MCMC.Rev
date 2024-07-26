@@ -16,7 +16,9 @@ moves    = VectorMoves()
 monitors = VectorMonitors()
 
 
-source(Morphological substitution scripts/pps_MCMC.Rev)
+source(Morphological substitution scripts/Mk_Model.Rev) #Mk model
+
+source (Morphological substitution scripts/MkVP+G_Model.Rev) #MkVP+G model
 
 
 
